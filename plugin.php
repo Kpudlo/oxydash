@@ -10,7 +10,7 @@ Version: 0.1
 
 add_action('plugins_loaded', 'oxygen_learndash_init');
 
-oxygen_learndash_init () {
+function oxygen_learndash_init () {
   
   // check if LearnDash is installed and active
   
