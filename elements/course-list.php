@@ -8,12 +8,8 @@ class CourseList extends \OxyDashEl {
         return 'Course List';
     }
 
-    function dashTemplate() {
-        return 'learnsdash_template_course_list';
-    }
-
-    function dash_button_place() {
-        return "single";
+    function render($options, $default, $content) {
+        echo do_shortcode('[ld_course_list]');
     }
 
     function icon() {
