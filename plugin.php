@@ -2,10 +2,11 @@
 
 /*
 Plugin Name: Oxygen Elements for LearnDash
-Author: Luxibay
-Author URI: https://luxibay.com
+Author: Kevin Pudlo
+Author URI: https://kevinpudlo.com
 Description: Adds LearnDash Elements for Oxygen.
 Version: 0.1
+Text Domain: oxydash
 */
 
 add_action('plugins_loaded', 'oxygen_learndash_init');

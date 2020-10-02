@@ -9,7 +9,7 @@ class CourseList extends \OxyDashEl {
     }
 
     function render($options, $default, $content) {
-        echo do_shortcode('[ld_course_list]');
+        echo do_shortcode('[ld_course_list '.$options.']');
     }
 
     function icon() {

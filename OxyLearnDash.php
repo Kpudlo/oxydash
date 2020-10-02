@@ -12,11 +12,11 @@ Class OxyLearnDash{
         $this->setup_options();
 
         // Register +Add LearnDash section
-        add_action('oxygen_add_plus_sections', array($this, 'register_add_plus_section'));
+        add_action('oxygen_add_plus_sections', array($this, 'oxydash_register_section'));
 
         // Register +Add LearnDash subsections
         // oxygen_add_plus_{$id}_section_content
-        add_action('oxygen_add_plus_dash_section_content', array($this, 'register_add_plus_subsections'));
+        add_action('oxygen_add_plus_dash_section_content', array($this, 'oxydash_register_subsections'));
 
         // Dash Global Styles UI
         add_action('oxygen_vsb_global_styles_tabs',     array($this, 'global_settings_tab'));
@@ -157,11 +157,11 @@ Class OxyLearnDash{
         
     }
 
-
+    /** */
     function load_files() {
 
         // Single Course
-        include_once "elements/course-overview.php";
+        include_once "elements/course-list.php";
 
         // auto include new elements
         $element_filenames = glob(plugin_dir_path(__FILE__)."elements/*.php");
@@ -170,16 +170,16 @@ Class OxyLearnDash{
         }
     }
 
+    /** Registers the LearnDash section in Oxygen */
+    function oxydash_register_section() {
 
-    function register_add_plus_section() {
-
-        CT_Toolbar::oxygen_add_plus_accordion_section("dash",__("LearnDash"));
+        CT_Toolbar::oxygen_add_plus_accordion_section("dash",_e("LearnDash"));
     }
 
-
-    function register_add_plus_subsections() { ?>
+    /** Loads all the LearnDash elements for Oxygen */
+    function oxydash_register_subsections() { ?>
         
-        <h2><?php _e("Single Course", "oxygen");?></h2>
+        <h2><?php _e("Course List");?></h2>
         <?php do_action("oxygen_add_plus_dash_single"); ?>
     
     <?php }
